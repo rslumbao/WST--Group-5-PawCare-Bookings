@@ -1,0 +1,467 @@
+/* =========================================================
+   PawCare Bookings — Base Styles
+   Reusable classes: .btn, .btn-primary, .btn-secondary,
+   .form-group, .service-card, .card
+   ========================================================= */
+
+:root {
+    --color-primary: #2f7a5f;
+    --color-primary-dark: #235c47;
+    --color-accent: #e8734a;
+    --color-text: #2b2b2b;
+    --color-muted: #6b6b6b;
+    --color-bg: #fdfaf6;
+    --color-surface: #ffffff;
+    --color-border: #dedad3;
+    --radius: 8px;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+body {
+    margin: 0;
+    font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+    font-size: 1.05rem;
+    color: var(--color-text);
+    background: var(--color-bg);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: 2.75rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.4rem;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin: 0;
+}
+
+a {
+    color: var(--color-primary);
+}
+
+/* ---------- Header & Nav ---------- */
+
+header {
+    background: var(--color-primary);
+    color: #fff;
+    padding: var(--spacing-lg) var(--spacing-md);
+    text-align: center;
+}
+
+header h1 {
+    color: #fff;
+    margin: 0 0 var(--spacing-sm);
+}
+
+header p {
+    margin: 0;
+    color: #eafff5;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-md);
+    background: var(--color-surface);
+    padding: var(--spacing-sm) var(--spacing-md);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--color-primary-dark);
+    padding: 0.35rem 0.5rem;
+    border-radius: var(--radius);
+}
+
+nav a:hover,
+nav a:focus {
+    background: var(--color-bg);
+    text-decoration: underline;
+}
+
+/* ---------- Sections ---------- */
+
+main section,
+main aside {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.banner-frame {
+    width: 100%;
+    max-width: 100%;
+    margin: var(--spacing-lg) auto 0;
+    overflow: hidden;
+    border-radius: var(--radius);
+}
+
+.banner-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* ---------- Service Cards ---------- */
+
+#services {
+    display: block;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+}
+
+.service-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.service-card img {
+    width: 100%;
+    border-radius: var(--radius);
+}
+
+.service-card h3 {
+    margin: 0;
+}
+
+.service-price {
+    font-weight: 600;
+    color: var(--color-primary-dark);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--spacing-sm);
+}
+
+.table-scroll {
+    overflow-x: auto;
+}
+
+.table-scroll table {
+    min-width: 480px;
+}
+
+th, td {
+    text-align: left;
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid var(--color-border);
+}
+
+th {
+    background: var(--color-primary-dark);
+    color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background: #f4f1eb;
+}
+
+/* ---------- Forms ---------- */
+
+form {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--spacing-md);
+}
+
+fieldset {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: var(--spacing-md);
+    margin: 0 0 var(--spacing-md);
+}
+
+legend {
+    font-weight: 700;
+    color: var(--color-primary-dark);
+    padding: 0 0.4rem;
+}
+
+.form-group {
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    max-width: 420px;
+}
+
+.form-group label {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group input[type="time"],
+.form-group select,
+.form-group textarea {
+    padding: 0.5rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    font: inherit;
+}
+
+.radio-group,
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+}
+
+.radio-group label,
+.checkbox-group label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+#slot-picker {
+    margin: var(--spacing-sm) 0 var(--spacing-md);
+}
+
+#time-slot-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0;
+}
+
+#time-slot-list li {
+    display: flex;
+}
+
+#time-slot-list li.slot-placeholder {
+    background: var(--color-bg);
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius);
+    padding: 0.4rem 0.75rem;
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    display: block;
+}
+
+.slot-btn {
+    background: var(--color-surface);
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary-dark);
+    border-radius: var(--radius);
+    padding: 0.4rem 0.75rem;
+    font: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.slot-btn:hover:not(:disabled) {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.slot-btn.slot-selected {
+    background: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+    color: #fff;
+}
+
+.slot-btn.slot-booked,
+.slot-btn:disabled {
+    background: #f0efec;
+    border-color: var(--color-border);
+    color: var(--color-muted);
+    text-decoration: line-through;
+    cursor: not-allowed;
+}
+
+.status-message {
+    color: var(--color-primary-dark);
+    font-weight: 600;
+    min-height: 1.4em;
+}
+
+.field-error {
+    color: #b3261e;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    display: block;
+}
+
+.char-count {
+    color: var(--color-muted);
+    font-size: 0.8rem;
+    align-self: flex-end;
+}
+
+#confirmation-details {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.3rem 1rem;
+    margin: var(--spacing-md) 0;
+}
+
+#confirmation-details dt {
+    font-weight: 600;
+    color: var(--color-primary-dark);
+}
+
+#confirmation-details dd {
+    margin: 0;
+}
+
+/* ---------- Buttons ---------- */
+
+.btn {
+    display: inline-block;
+    padding: 0.6rem 1.4rem;
+    border-radius: var(--radius);
+    border: 2px solid transparent;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: var(--color-primary-dark);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--color-muted);
+    border-color: var(--color-border);
+}
+
+.btn-secondary:hover {
+    background: var(--color-bg);
+}
+
+.select-service-link {
+    align-self: flex-start;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--color-accent);
+}
+
+.select-service-link:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Confirmation ---------- */
+
+#booking-confirmation {
+    background: #eafaf1;
+    border: 1px solid var(--color-primary);
+    border-radius: var(--radius);
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+#booking-confirmation h3 {
+    margin-top: 0;
+}
+
+/* ---------- Business Hours ---------- */
+
+aside {
+    background: var(--color-surface);
+    border-radius: var(--radius);
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+    background: var(--color-primary-dark);
+    color: #eafff5;
+    text-align: center;
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+footer nav {
+    background: transparent;
+    position: static;
+    margin-bottom: var(--spacing-sm);
+}
+
+footer nav a {
+    color: #eafff5;
+}
+
+footer p {
+    margin: 0.25rem 0;
+    font-size: 0.85rem;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    nav {
+        gap: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    main section,
+    main aside {
+        padding: var(--spacing-md);
+    }
+}
